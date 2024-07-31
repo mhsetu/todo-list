@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaCirclePlus } from 'react-icons/fa6';
 import { ContextProvider } from '../../context/Context';
 import History from '../Completed/History/History';
 
-const Form = () => {
-  const { save, setSave, transfer } = useContext(ContextProvider);
+const Form = ({ transfer, save, setSave }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -28,6 +27,7 @@ const Form = () => {
             name='todo'
             className='grow'
             placeholder='New Todo'
+            required
           />
         </label>
       </form>

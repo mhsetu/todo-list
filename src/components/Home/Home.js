@@ -1,11 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 import Form from '../Form/Form';
 import Todo from '../Todo/Todo';
 import { ContextProvider } from '../../context/Context';
 
 const Home = () => {
-  const { save } = useContext(ContextProvider);
+  const [transfer, setTransfer] = useState([]);
+  const [save, setSave] = useState([]);
+
   return (
     <div>
       <div className='my-16'>
@@ -14,11 +16,24 @@ const Home = () => {
       <div className='grid grid-cols-3 justify-items-center'>
         <div className='col-span-2'>
           {save.map((task, index) => (
-            <Todo key={index} id={index} task={task}></Todo>
+            <Todo
+              key={index}
+              id={index}
+              save={save}
+              setSave={setSave}
+              transfer={transfer}
+              setTransfer={setTransfer}
+              task={task}
+            ></Todo>
           ))}
         </div>
         <div className='max-w-sm'>
-          <Form></Form>
+          <Form
+            transfer={transfer}
+            setTransfer={setTransfer}
+            save={save}
+            setSave={setSave}
+          ></Form>
         </div>
       </div>
     </div>
