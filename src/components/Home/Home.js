@@ -1,8 +1,8 @@
-import React, { useContext, useState } from 'react';
+import React, {  useState } from 'react';
 
 import Form from '../Form/Form';
 import Todo from '../Todo/Todo';
-import { ContextProvider } from '../../context/Context';
+
 
 const Home = () => {
   const [transfer, setTransfer] = useState([]);

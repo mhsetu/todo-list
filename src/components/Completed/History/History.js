@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
-import { ContextProvider } from '../../../context/Context';
+import React from 'react';
+
 import { iconUndo } from '../../Icons/Icons';
 
 const History = ({ trans }) => {
-  const handleUndo=()=>{
+  const handleUndo = () => {
     // const remove=
-  }
+  };
   return (
     <div>
       <div className='mt-5'>

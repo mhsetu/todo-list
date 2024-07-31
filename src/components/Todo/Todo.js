@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, {  useState } from 'react';
 import { iconComplete, iconDelete, iconEdit } from '../Icons/Icons';
-import { ContextProvider } from '../../context/Context';
+
 import { FaCirclePlus } from 'react-icons/fa6';
 
 const Todo = ({ task, id,transfer,setTransfer ,save, setSave }) => {
