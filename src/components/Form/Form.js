@@ -3,7 +3,7 @@ import { FaCirclePlus } from 'react-icons/fa6';
 
 import History from '../Completed/History/History';
 
-const Form = ({ transfer, save, setSave }) => {
+const Form = ({ transfer, save, setSave, setTransfer }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -34,7 +34,15 @@ const Form = ({ transfer, save, setSave }) => {
       <div>
         {transfer.length > 0 ? <h2 className='mt-12 text-xl'>History</h2> : ''}
         {transfer.map((trans, index) => (
-          <History key={index} trans={trans}></History>
+          <History
+            key={index}
+            id={index}
+            trans={trans}
+            transfer={transfer}
+            setTransfer={setTransfer}
+            save={save}
+            setSave={setSave}
+          ></History>
         ))}
       </div>
     </div>
